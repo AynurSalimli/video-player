@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Roboto";
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: hsla(217, 100%, 50%, 1);
+
+  background: linear-gradient(
+    90deg,
+    hsla(217, 100%, 50%, 1) 0%,
+    hsla(186, 100%, 69%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    90deg,
+    hsla(217, 100%, 50%, 1) 0%,
+    hsla(186, 100%, 69%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    90deg,
+    hsla(217, 100%, 50%, 1) 0%,
+    hsla(186, 100%, 69%, 1) 100%
+  );
+}
+
+.app {
+  width: 1000px;
+  border: 1px solid hsl(0, 0%, 93%);
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
+  &-main {
+    height: 500px;
+    width: 100%;
+    &__head{
+      h2{
+        padding: 20px;
+      }
+    }
+    &__body {
+      height: 400px;
+      overflow: hidden;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      .video {
+        position: relative;
+        overflow: hidden;
+        video {
+          width: 450px;
+          height: min-content;
+        }
+        button {
+          position: absolute;
+          bottom: 10px;
+          width: 50px;
+          cursor: pointer;
+          border: none;
+          outline: none;
+          border-radius: 7px;
+        }
+        .play_pause {
+          left: 15px;
+        }
+        .prevBtn {
+          left: 75px;
+        }
+        .nextBtn {
+          left: 130px;
+        }
+        .progress-bar {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 50%;
+          height: 4px;
+          background-color: orangered;
+          transition: .4s;
+        }
+        .progress-bar-control{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 4px;
+          background-color: transparent;
+          transition: .4s;
+          z-index: 2;
+        }
+      }
+      .playlist {
+        width: 450px;
+        overflow-y: scroll;
+        align-self: normal;
+        &--item {
+          padding: 30px 10px;
+          border: 1px solid hsl(0, 0%, 93%);
+          cursor: pointer;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 5px;
+          img {
+            height: 50px;
+            width: 50px;
+          }
+          &.active {
+            background-color: hsl(0, 0%, 68%);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
